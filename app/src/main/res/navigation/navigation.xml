@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/gradesListFragment">
+
+    <fragment
+        android:id="@+id/gradesListFragment"
+        android:name="com.example.gradeslist.fragments.list.GradesListFragment"
+        android:label="fragment_grades_list"
+        tools:layout="@layout/fragment_grades_list" >
+        <action
+            android:id="@+id/action_gradesListFragment_to_addGradeFragment"
+            app:destination="@id/addGradeFragment" />
+        <action
+            android:id="@+id/action_gradesListFragment_to_editGradesFragment"
+            app:destination="@id/editGradesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addGradeFragment"
+        android:name="com.example.gradeslist.fragments.add.AddGradeFragment"
+        android:label="fragment_add_grade"
+        tools:layout="@layout/fragment_add_grade" >
+        <action
+            android:id="@+id/action_addGradeFragment_to_gradesListFragment"
+            app:destination="@id/gradesListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editGradesFragment"
+        android:name="com.example.gradeslist.fragments.update.EditGradesFragment"
+        android:label="fragment_edit_grades"
+        tools:layout="@layout/fragment_edit_grades" >
+        <action
+            android:id="@+id/action_editGradesFragment_to_gradesListFragment"
+            app:destination="@id/gradesListFragment" />
+        <argument
+            android:name="curentGrade"
+            app:argType="com.example.gradeslist.model.Grades" />
+    </fragment>
+</navigation>
